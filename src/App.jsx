@@ -5,12 +5,10 @@ import Home from './unauthorized/Home';
 import LoginPage from './unauthorized/LoginPage';
 import SignUp from './unauthorized/SignUp';
 import DashboardHome from './dashboard/Dashboard'; // Your main dashboard content
-import ProfilePage from './dashboard/ProfilePage'; // Assuming you have this page
 import DashboardLayout from './dashboard/DashboardLayout';
 import ForgotPassword from './unauthorized/ForgotPassword';
 
 import { UserAuth } from "./context/AuthContext";
-import Settings from './dashboard/Settings';
 import LogoutButton from './component/SignOut';
 
 function App() {
