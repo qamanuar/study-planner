@@ -57,7 +57,7 @@ This app allows users to:
 
 ## 🔗 Live Demo
 
-Check out the live version of the app here: [Your Deployed Link](https://study-planners.vercel.app)
+Check out the live version of the app here: [Study Planner](https://study-planners.vercel.app)
 
 ---
 
