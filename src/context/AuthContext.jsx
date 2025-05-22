@@ -9,21 +9,26 @@ export const AuthContextProvider = ({ children }) => {
 
   // Load session on mount
   useEffect(() => {
-    const getSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      setSession(session);
-    };
-    getSession();
+  const handleOAuthRedirect = async () => {
+    await supabase.auth.getSessionFromUrl();
+  };
 
-    // Listen for session changes
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
+  const getSession = async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+    setSession(session);
+  };
 
-    return () => {
-      listener?.subscription?.unsubscribe();
-    };
-  }, []);
+  handleOAuthRedirect().then(getSession);
+
+  const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+    setSession(session);
+  });
+
+  return () => {
+    listener?.subscription?.unsubscribe();
+  };
+}, []);
+
 
   // Email/Password Sign In
   const signIn = async (email, password) => {

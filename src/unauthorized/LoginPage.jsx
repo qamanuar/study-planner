@@ -48,7 +48,7 @@ function LoginPage() {
   if (!email) return;
 
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: 'http://localhost:5174/update-password', // Change to your deployed URL
+    redirectTo: 'https://study-planners.vercel.app//update-password', // Change to your deployed URL
   });
 
   if (error) {
