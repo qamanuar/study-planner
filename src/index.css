@@ -2,3 +2,33 @@
   margin: 0;
   padding: 0;
 }
+
+@media (max-width: 700px){
+  .screen{
+    padding: 30px 20px !important;
+  }
+
+  .content{
+    width: 100vw !important;
+  }
+
+  .priority{
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 600px){
+  .priority{
+    font-size: 15px !important;
+  }
+}
+@media (max-width: 500px){
+  .priority{
+    font-size: 12px !important;
+  }
+}
+@media (max-width: 400px){
+  .priority{
+    font-size: 12px !important;
+  }
+}

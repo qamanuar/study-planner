@@ -176,8 +176,8 @@ function Dashboard() {
   
 
   return (
-    <div className="flex justify-center items-start w-full bg-gray-100 min-h-screen p-6">
-      <div className="w-4/5 max-w-4xl">
+    <div className="screen flex justify-center items-start w-full bg-gray-100 min-h-screen p-6">
+      <div className="content w-4/5 max-w-4xl">
         <div className="space-y-6">
           <div className="flex">
             <h1 className="font-medium flex-grow text-xl">Dashboard</h1>
@@ -203,13 +203,13 @@ function Dashboard() {
               <h2 className="text-xl flex-grow font-semibold">Tasks</h2>
               <button
                 onClick={() => setSortByPriority(!sortByPriority)}
-                className="mb-4 px-4 py-2 bg-white border-2 text-purple-600 border-purple-500 transition text-white rounded-3xl mx-2 hover:bg-purple-500 hover:text-white"
+                className="toggleBtn mb-4 px-4 py-2 bg-white border-2 text-purple-600 border-purple-500 transition text-white rounded-3xl mx-2 hover:bg-purple-500 hover:text-white"
               >
                 {sortByPriority ? "Sort: Priority" : "Sort: Default"}
               </button>
               <button
                 onClick={() => setShowTime(!showTime)}
-                className="mb-4 px-4 py-2 bg-white border-2 text-blue-600 border-blue-500 transition text-white rounded-3xl mx-2 hover:bg-blue-500 hover:text-white"
+                className="toggleBtn mb-4 px-4 py-2 bg-white border-2 text-blue-600 border-blue-500 transition text-white rounded-3xl mx-2 hover:bg-blue-500 hover:text-white"
               >
                 {showTime ? "Hide Time" : "Show Time"}
               </button>
@@ -250,7 +250,7 @@ function Dashboard() {
 
                           {/* Priority Badge */}
                           <span
-                            className={`text-sm font-medium w-1/6 text-center mx-[1rem] py-1 rounded-full
+                            className={`text-sm font-medium w-1/6 text-center mx-[1rem] py-1 rounded-full priority
                               ${
                                 r.priority === "High"
                                   ? "bg-red-100 text-red-700 border border-red-300"
@@ -325,7 +325,7 @@ function Dashboard() {
 
                           {/* Priority Badge */}
                           <span
-                            className={`text-sm font-medium w-1/6 text-center mx-[1rem] py-1 rounded-full
+                            className={`text-sm font-medium w-1/6 text-center mx-[1rem] py-1 rounded-full priority
                               ${
                                 r.priority === "High"
                                   ? "bg-red-100 text-red-700 border border-red-300"
@@ -398,7 +398,7 @@ function Dashboard() {
 
                           {/* Priority Badge */}
                           <span
-                            className={`text-sm font-medium w-1/6 text-center mx-[1rem] py-1 rounded-full
+                            className={`text-sm font-medium w-1/6 text-center mx-[1rem] py-1 rounded-full priority
                               ${
                                 r.priority === "High"
                                   ? "bg-red-100 text-red-700 border border-red-300"
@@ -437,84 +437,84 @@ function Dashboard() {
             </div>
 
             {Object.entries(groupedReminders)
-  .filter(([date]) => date > tomorrow)
-  .length > 0 && (
-    <div>
-      <SectionHeader
-        title="Upcoming"
-        isOpen={showUpcoming}
-        onToggle={() => setShowUpcoming(!showUpcoming)}
-      />
-
-      <AnimatePresence initial={false}>
-        {showUpcoming && (
-          <motion.ul
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            {Object.entries(groupedReminders)
               .filter(([date]) => date > tomorrow)
-              .map(([date, remindersForDate]) => (
-                <div key={date}>
-                  <div className="mb-1 mt-4 text-sm font-medium text-gray-500 ml-6">
-                    {formatDate(new Date(date))}
-                  </div>
-                  <ul className="list-disc ml-6 space-y-2">
-                    {remindersForDate.map((r) => (
-                      <li
-                        key={r.id}
-                        className="list-none bg-white flex justify-between items-center flex-row my-2 py-3 px-5 rounded-lg border border-gray-400"
+              .length > 0 && (
+                <div>
+                  <SectionHeader
+                    title="Upcoming"
+                    isOpen={showUpcoming}
+                    onToggle={() => setShowUpcoming(!showUpcoming)}
+                  />
+
+                  <AnimatePresence initial={false}>
+                    {showUpcoming && (
+                      <motion.ul
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
                       >
-                        {/* Title and Time */}
-                        <div className="flex-1">
-                          {r.title}
-                          {showTime && ` at ${formatTimeTo12Hour(r.time)}`}
-                        </div>
+                        {Object.entries(groupedReminders)
+                          .filter(([date]) => date > tomorrow)
+                          .map(([date, remindersForDate]) => (
+                            <div key={date}>
+                              <div className="mb-1 mt-4 text-sm font-medium text-gray-500 ml-6">
+                                {formatDate(new Date(date))}
+                              </div>
+                              <ul className="list-disc ml-6 space-y-2">
+                                {remindersForDate.map((r) => (
+                                  <li
+                                    key={r.id}
+                                    className="list-none bg-white flex justify-between items-center flex-row my-2 py-3 px-5 rounded-lg border border-gray-400"
+                                  >
+                                    {/* Title and Time */}
+                                    <div className="flex-1">
+                                      {r.title}
+                                      {showTime && ` at ${formatTimeTo12Hour(r.time)}`}
+                                    </div>
 
-                        {/* Priority Badge */}
-                        <span
-                          className={`text-sm font-medium w-1/6 text-center mx-[1rem] py-1 rounded-full
-                            ${
-                              r.priority === "High"
-                                ? "bg-red-100 text-red-700 border border-red-300"
-                                : r.priority === "Medium"
-                                ? "bg-yellow-100 text-yellow-700 border border-yellow-300"
-                                : "bg-green-100 text-green-700 border border-green-300"
-                            }`}
-                        >
-                          {r.priority}
-                        </span>
+                                    {/* Priority Badge */}
+                                    <span
+                                      className={`text-sm font-medium w-1/6 text-center mx-[1rem] py-1 rounded-full priority
+                                        ${
+                                          r.priority === "High"
+                                            ? "bg-red-100 text-red-700 border border-red-300"
+                                            : r.priority === "Medium"
+                                            ? "bg-yellow-100 text-yellow-700 border border-yellow-300"
+                                            : "bg-green-100 text-green-700 border border-green-300"
+                                        }`}
+                                    >
+                                      {r.priority}
+                                    </span>
 
-                        {/* Edit Button */}
-                        <button
-                          onClick={() => handleEditReminder(r)}
-                          className="p-2 text-blue-600 hover:text-blue-800"
-                          title="Edit"
-                        >
-                          ✏️
-                        </button>
+                                    {/* Edit Button */}
+                                    <button
+                                      onClick={() => handleEditReminder(r)}
+                                      className="p-2 text-blue-600 hover:text-blue-800"
+                                      title="Edit"
+                                    >
+                                      ✏️
+                                    </button>
 
-                        {/* Delete Button */}
-                        <button
-                          onClick={() => handleDeleteReminder(r.id)}
-                          className="p-2 text-red-600 hover:text-red-800"
-                          title="Delete"
-                        >
-                          🗑️
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
+                                    {/* Delete Button */}
+                                    <button
+                                      onClick={() => handleDeleteReminder(r.id)}
+                                      className="p-2 text-red-600 hover:text-red-800"
+                                      title="Delete"
+                                    >
+                                      🗑️
+                                    </button>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
                 </div>
-              ))}
-          </motion.ul>
-        )}
-      </AnimatePresence>
-    </div>
-)}
+            )}
 
 
           </div>
