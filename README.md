@@ -1,7 +1,3 @@
-Perfect! Based on your answers and screenshot, here's a **wonderful, professional, and beginner-friendly `README.md`** tailored for your **Study Planner** project.
-
----
-
 ## 📝 Study Planner
 
 > Plan smarter. Study better.
