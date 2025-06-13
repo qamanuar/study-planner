@@ -81,13 +81,37 @@ Here’s a peek at the **Dashboard UI**:
 
 ### 📌 Roadmap
 
-* [ ] Subject filtering and color labels
-* [ ] Dark mode
-* [ ] Mobile responsiveness improvements
-* [ ] Calendar integration
-* [ ] Group study reminders
+Here are the upcoming features and improvements planned for **Study Planner**:
 
-> Suggest features via Issues or PRs!
+#### 📆 Planner Enhancements
+
+* [ ] Semester registration to calculate & show current academic week
+* [ ] Redesign time & priority buttons using icons instead of text
+* [ ] Add simple note-taking section for quick thoughts or lecture notes
+* [ ] Filter tasks by week, not just exact date (for assignment tracking)
+* [ ] Add **category** tags (e.g. assignment, side quest, personal)
+* [ ] Default values for:
+  * Date (e.g. today, tomorrow, next week)
+  * Time (e.g. 12:00 PM or user’s preferred time)
+* [ ] Reminder notifications (no notification page; just system pop-ups)
+
+#### 💰 Money Management Module (New Page)
+
+* [ ] Track **income, savings, and usage**
+* [ ] Auto-calculate max spend per day based on balance & remaining days
+* [ ] Year-end savings goal to adjust daily spending limits
+* [ ] UI Improvements:
+  * Large display of total income and spending
+  * Prominent daily spending info
+  * Scrollable history of spendings
+  * Minimal category breakdown (focus on *amount*, not *type*)
+  * Customizable savings section
+  * Use the same large UI style as task planner for spending input
+
+---
+
+💡 *Got feature suggestions?*
+Feel free to **email me at [anuarq999@gmail.com](mailto:anuarq999@gmail.com)**
 
 ---
 
