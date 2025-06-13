@@ -1,92 +1,115 @@
-# Reminder & Planner App
-
-Welcome to the **Reminder & Planner** project — a clean and intuitive web application to help users manage their tasks efficiently with reminders and priorities.
+Perfect! Based on your answers and screenshot, here's a **wonderful, professional, and beginner-friendly `README.md`** tailored for your **Study Planner** project.
 
 ---
 
-## 🚀 Project Overview
+## 📝 Study Planner
 
-This app allows users to:
+> Plan smarter. Study better.
 
-- **Sign up** with email authentication (verification email sent automatically)
-- **Log in / Log out / Reset password** securely
-- **Create, edit, and delete reminders** with ease
-- **Toggle display options** for reminders
-- **Sort reminders** by default order or priority
+**Study Planner** is a web app built for students to efficiently organize tasks, assignments, and reminders. With a simple and clean interface, students can create, track, and manage their academic goals stress-free.
+
+🔗 **Live Demo**: [https://study-planners.vercel.app](https://study-planners.vercel.app)
 
 ---
 
-## 🔑 Features
+### ✨ Features
 
-### Authentication
-
-- Users can **sign up** using their email and password.
-- Upon signup, the system sends an **authentication email** to verify the account.
-- Supports **login**, **logout**, and **password reset** functionality.
-
-### Reminder Management
-
-- Users can **create new reminders** by providing:
-  - **Title** of the reminder
-  - **Date** and **Time**
-  - **Priority** level: Easy, Medium, or Hard
-- Reminders can be **edited** or **deleted** at any time.
-
-### UI Controls
-
-- **Toggle button** to show/hide the time associated with each reminder.
-- **Toggle button** to sort reminders by:
-  - Default (creation order)
-  - Priority (Easy → Medium → Hard)
+* ✅ **Task Reminders** — Create and categorize tasks by due date and priority.
+* 📚 **Subject Tracker** — Stay on top of all your subjects and assignments.
+* 🧠 **Easy Reminders** — Prominent "Create Reminder" button for quick additions.
+* 👥 **User Auth System** — Sign up, log in, and reset passwords via email or Gmail.
+* 🔐 **Multi-user Support** — Each user has a personalized dashboard.
+* 🧪 **Upcoming Features** — We’re planning even more updates soon. Stay tuned!
 
 ---
 
-## 🛠️ Technologies Used
+### 🧑‍🎓 Who's it for?
 
-- React for frontend UI
-- Supabase for backend database and authentication
-- Vite for build tooling and development
+**Students** who want a clean, straightforward way to manage their academic workload and tasks.
 
 ---
 
-## 📸 Screenshots
-<img width="1470" alt="Screenshot 2025-05-22 at 1 22 33 PM" src="https://github.com/user-attachments/assets/f4ff91ca-2821-41ba-9167-d323a2c44c49" />
-<img width="1470" alt="Screenshot 2025-05-22 at 1 22 54 PM" src="https://github.com/user-attachments/assets/c00fb0f5-aaf8-49df-a273-2e2a6a85d3c6" />
+### ⚙️ Tech Stack
+
+| Layer    | Tech                                |
+| -------- | ----------------------------------- |
+| Frontend | React                               |
+| Backend  | Supabase (Auth + DB)                |
+| Auth     | Supabase Auth                       |
+| Hosting  | Vercel                              |
+| Styling  | Tailwind                            |
+
+> Note: Supabase is a backend-as-a-service platform; React talks to it directly through its SDK.
 
 ---
 
-## 🔗 Live Demo
+### 🚀 Getting Started
 
-Check out the live version of the app here: [Study Planner](https://study-planners.vercel.app)
+```bash
+# Clone the repo
+git clone https://github.com/your-username/study-planner.git
 
----
+# Install dependencies
+npm install
 
-## 🙌 Contribution
-
-This project was built with the support of:
-
-- **ChatGPT** — for assistance with coding, debugging, and writing clear documentation  
-- **Tailwind CSS** — for beautiful and responsive UI styling  
-- **Vite** — for lightning-fast build and development tooling
-
-Thanks to these amazing tools and resources that made this app possible!
+# Start development server
+npm run dev
+```
 
 ---
 
-## 📄 License
+### 🔐 Environment Variables
 
-This project is licensed under the MIT License.
+Create a `.env.local` file and add:
 
----
+```
+VITE_SUPABASE_URL=your-supabase-url
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
 
-## 🙋‍♂️ About Me
-
-Hi! I'm Qamarul Anuar, a passionate developer who loves building useful apps. Connect with me:
-
-- [LinkedIn](https://www.linkedin.com/in/qamarulanuar/)
-- [GitHub](https://github.com/qamanuar)
+> These keys are found in your [Supabase project dashboard](https://supabase.com/).
 
 ---
 
-Thank you for checking out my project!  
-Happy planning and reminding! 🗓️✅
+### 📸 Screenshots
+
+Here’s a peek at the **Dashboard UI**:
+
+![Study Planner Screenshot](./public/dashboard.png) <!-- You can replace this with the actual image path or hosted URL -->
+
+---
+
+### 📌 Roadmap
+
+* [ ] Subject filtering and color labels
+* [ ] Dark mode
+* [ ] Mobile responsiveness improvements
+* [ ] Calendar integration
+* [ ] Group study reminders
+
+> Suggest features via Issues or PRs!
+
+---
+
+### 🤝 Contributing
+
+Contributions are welcome! Please fork this repo and open a pull request.
+
+* Open an issue first to discuss changes
+* Follow consistent code style
+* Be kind in PR reviews
+
+---
+
+### 📜 License
+
+This project is licensed under the **MIT License**.
+See the [LICENSE](./LICENSE) file for details.
+
+---
+
+### 🙏 Acknowledgments
+
+* Powered by [Supabase](https://supabase.com/)
+* Styled with 💖 by you
+* Helped and supported by [ChatGPT](https://openai.com/chatgpt)

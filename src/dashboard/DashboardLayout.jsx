@@ -5,7 +5,7 @@ import Sidebar from '../component/Sidebar';
 function DashboardLayout() {
   return (
     <div className="flex">
-      {/* <Sidebar /> */}
+      {/* <Sidebars /> */}
       <main className="flex-1 justify-center items-center">
         <Outlet />
       </main>
